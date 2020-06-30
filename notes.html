@@ -1,0 +1,402 @@
+<html>
+    <!DOCTYPE html> <!--more about what this is below-->
+    <!--use "meta" to store page information about your website.-->
+    <meta name="description" content="HTTP notes for Front End Web Tech"> <!--what page is about-->
+    <meta name="keywords" content="ice cream, cats, HTTP"> <!--what terms this page will appear when searched. In practice, now useless.-->
+    <meta name="robots" content="nofollow"> <!--should this page be used in search engine results?-->
+    <meta http-equiv="author" content="Casper Rutz"> <!--who wrote the website-->
+    <meta http-equiv="pragma" content="no-cache"> <!-- prevents browser from caching the page-->
+    <!-- <meta http-equiv="expires" content="what date the page should expire at"/> -->
+
+    <head>
+        <!--this changes what the tab says-->
+        <title>TAB HEADING</title>
+    </head>
+    <body> <!--everything in "body" is shown by browser-->
+        <h1 id="top">HTML Reference Sheet</h1>
+        <!-- "h1" tag is the main heading-->
+        <!--id added so we can pop back here from below-->
+
+        <h2>Directory</h2>
+            <!-- "h2" tag is the main heading-->
+            <ol>
+                <li><a href="#basics">Basics</a></li>
+                <li><a href="#special_markup">Special Semantic Markup</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#extra_markup">Extra Markup</a></li>
+            </ol>
+            <hr>
+
+        <h2 id="basics">Basics</h2>
+            <p>This text says stuff.</p>
+            <p>The 4<sup>th</sup> of July is a stupid holiday<sub>1</sub>
+            <!-- <sup> creates a superscript-->
+            <br> <!-- <br /> creates a newline, not a new paragraph-->
+            <sub><b>1:</b> According to me.</sub></p>
+            <!-- <sub> creates a subscript-->
+            <p><b>Moar stuff</b> in the <i>next section</i>!</p>
+            <!-- <b> is bold text, <i> is italics-->
+            <p lang="en-us">Okay, last one</p>
+            <hr> <!-- <hr /> creates  a line between paragraphs-->
+            <p lang="en-uk">Right, last one</p>
+            <a href="#top">Return to top</a>
+            <hr>
+
+        <h2 id="special_markup">Special Semantic Markup</h2>
+            <p><strong>This is an important section!</strong>
+            <!-- <strong> adds bold (automatically by browser)-->
+            </p><p>This text is <em>important</em>.</p>
+            <!-- <em> adds italics (automatically by browser)-->
+            <blockquote cite="http://www.wikipedia.org/wiki/Winnie-the-Pooh">
+                <p>Did you ever stop to think, and forget to start again?</p>
+            </blockquote>
+            <p>As A.A.Milne said, <q>Some people talk to animals. Not many listen though. That's the problem.</q></p>
+            <!-- <q> inserts "" so you don't have to!-->
+            <p><abbr title="Professor">Prof</abbr> Stephen Hawking</p>
+            <p><abbr title="National Aeronautics and Space Administration">NASA</abbr> does some crazy science shit.</p>
+            <p><cite>A Brief History of Time</cite> by Stephen Hawking</p>
+            <p>A <dfn>black hole</dfn> is really scary.</p>
+            <address>
+                <p><a ref="mailto:catbutts@catsrule.com">catbutts@catsrule.com</a></p>
+                <p>123 Cats Alley, Catbutts, OH</p>
+            </address>
+            <p>It was the <del>worst</del> <ins>best</ins> of times.</p>
+            <p>It was a <s>stupid</s> <i>uninformed</i> decision.</p>
+            <a href="#top">Return to top</a>
+            <hr>
+
+        <h2 id="lists">Lists</h2>
+            <ol>
+                <li>number one</li>
+                <li>number two</li>
+                <ul>
+                    <li>Create Bullet points</li>
+                    <li>moar</li>
+                    <ul>
+                        <li>we can just keep nesting</li>
+                    </ul>
+                </ul>
+                <li>number three</li>
+            </ol>
+            <dl>
+                <dt>Definition List</dt>
+                <dd>A list of terms and their definitions</dd>
+                <dt>dt tag</dt>
+                <dd>"definition term"</dd>
+                <dt>dd tag</dt>
+                <dd>"definition definition"</dd>
+            </dl>
+            <a href="#top">Return to top</a>
+            <hr>
+
+        <h2 id="links">Links</h2>
+            <!--websites won't work unless it's connected to internet-->
+            <a href="http://wwww.google.com">Google</a> 
+            <br>
+            <!--but this will work!-->
+            <a href="file:///Users/YOUR_USRNAME_HERE/Documents/FrontEnd_Demos/hi.html">other html, let's see if this works</a>
+            <!--if it's in the same directory, this should work-->
+            <br>
+            <a href="hi.html">Using a shortened relative URL</a>
+            <br>
+            <a href="hi.html" target="_blank">Open in a new tab</a>
+            <br>
+            <!--on bigger sites, use directories to hierarchy your links-->
+            <!--on bigger sites, use directories to hierarchy your links. Use ./ ../, etc, like in bash-->
+            <a href="mailto:catbutts@example.com">Opens users email with the address specified!</a>
+            <br>
+            <!--Need to specify an ID in the href below to pop to somewhere else on the same page-->
+            <!--to go to specific part of another page, just add the tag-->
+            <!--Ids should start with letter or underscore, not number-->
+            <a href="#top">Go to top of page!</a>
+            <hr>
+
+        <h2 id="images">Images</h2>
+            <!--keep images in a seperate file-->
+            <img src="Images/kitten_pumpkin.jpeg" alt="Black and white kittens playing around a Jack-o-lantern" title="These kittens love Halloween">
+            <!--title is mouseover text, alt is text description of image if user can't see it-->
+            <!--images are inline-->
+            <!--specifying size of image is a good idea in case it takes a while to load-->
+            <img src="Images/black_cat_pumpkin.jpg" alt="Black cat on a pumpkin" title="Witchy cat" width="1280" height="720"> 
+            <!--If image is wrong size, it's going to be distorted-->
+            <img src="Images/black_cat_pumpkin.jpg" alt="Black cat on a pumpkin" title="Stretchy cat" width="900" height="1024"> 
+            <!--save in jpg format when lots of colors are in image, save in png/gif when large stretches of same color are used-->
+            <!--images should be saved at EXACTLY 72ppi (pixels per inch)-->
+            <!--p. 118: TRANSPARENT IMAGES, save as png-->
+            <figure>
+                <img src="Images/horror_movie_cat.jpg">
+                <br>
+                <figcaption>This kitty is coming over for horror movie night</figcaption>
+            </figure>
+            <a href="#top">Return to top</a>
+            <hr>
+
+        <h2 id="tables">Tables</h2>
+            <table>
+                <tbody><tr>
+                    <td>r0c0</td>
+                    <td>r0c1</td>
+                </tr>
+                <tr>
+                    <td>r1c0</td>
+                    <td>r1c1</td>
+                </tr>
+                <tr>
+                    <td>r2c0</td>
+                    <td>r2c1</td>
+                </tr>
+            </tbody></table>
+            <!--use "th" tag as a table heading-->
+            <br>
+            <table>
+                <tbody><tr>
+                    <th></th> <!--keeps this cell empty-->
+                    <th scope="col">Cats</th>
+                    <th scope="col">Dogs</th>
+                </tr>
+                <tr>
+                    <th scope="row">Furry:</th>
+                    <td>Y</td>
+                    <td>Y</td>
+                </tr>
+                <tr>
+                    <th scope="row">Meows:</th>
+                    <td>Y</td>
+                    <td>N</td>
+                </tr>
+            </tbody></table>
+            <!--you can use "rowspan=[Number]" tag to make a cell extend for multiple cells <td rowspan=2> -->
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th> 
+                        <th>In</th> 
+                        <th>Out</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <tr>
+                        <th>January</th> 
+                        <td>100</td> 
+                        <td>200</td>
+                    </tr> 
+                    <tr>
+                        <th>March</th> 
+                        <td>300</td> 
+                        <td>400</td>
+                    </tr>
+                </tbody>
+                <tfoot> 
+                    <tr>
+                        <td></td> 
+                        <td>400</td> 
+                        <td>600</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <!--use "thead" "tbody" "tfoot" tags to add headers/footers to tables-->
+            <a href="#top">Return to top</a>
+            <hr>
+
+        <h2 id="forms">Forms</h2>
+        <form action="http://www.where-this-data-will-go.example.com" method="post">
+            <!--use method="get" for short forms or retrieving data, "post" for everything else-->
+            <fieldset>
+                <legend>Ice Cream Form</legend>
+                <!--legend tag helps identify what fieldset is for-->
+                    <label>Username:
+                        <input type="text" name="username" maxlength="20">
+                        <!-- there's a tag "size=[number]" to indicate how long text field should be, but that's old code and shouldn't be used now-->
+                        <!--type="text" makes it read in plain text, text="password" would make it dots-->
+                        <!--I think "name" field is used to sync with backend-->
+                    </label>
+                    <!--for text boxes, "label" tag contains the text box-->
+                    <br>
+                    <br>
+                <!--password, hides entered text-->
+                    <label>Password:
+                        <input type="password" name="password" maxlength="20" required="required">
+                        <!--required tag marks this field as required, will stop user if they don't fill it out-->
+                    </label>
+                    <br>
+                    <br>
+                <!--Radio buttons-->
+                What ice cream flavor do you prefer?
+                    <br>
+                    <input type="radio" name="ice_cream_preference" value="mint" id="mint">
+                    <label for="mint">Mint chocolate chip</label>
+                    <!--for non-text boxes, every choice has an associated label-->
+                    <br>
+                    <input type="radio" name="ice_cream_preference" value="pistachio">
+                    <label for="pistachio">Pistachio</label>
+                    <br>
+                    <input type="radio" name="ice_cream_preference" value="strawberry">
+                    <label for="strawberry">Strawberry</label>
+                    <br>
+                    <br>
+                <!--Check boxes-->
+                Select your favorite toppings:
+                    <br>
+                    <input type="checkbox" name="topping_preference" value="espresso" checked="checked" id="espresso">
+                    <!--checked="checked" auto-selects this topping, user can de-select it-->
+                    <label for="espresso">Espresso</label>
+                    <br>
+                    <input type="checkbox" name="topping_preference" value="whipped_cream" id="whipped_cream">
+                    <label for="whipped_cream">Whipped Cream</label>
+                    <br>
+                    <input type="checkbox" name="topping_preference" value="cookies" id="cookies">
+                    <label for="cookies">Cookie Crumbles</label>
+                    <br>
+                    <br>
+                <!--Drop down-->
+                What type of cone would you like?
+                    <br>
+                    <select name="cone">
+                        <option value="chocolate_dipped">Chocolate Dipped</option>
+                        <option value="regular" selected="selected">Regular</option>
+                        <!--selected="selected" auto-selects this choice, user can choose something else-->
+                        <option value="sprinkles">Sprinkle Dipped</option>
+                    </select>
+                <!--Weird select box-->
+                <p>Do you have any of the following allergies? 
+                (You can select more than one option by holding down control on a PC or command key on a Mac while selecting different options.)</p>
+                    <select name="allergies" size="5" multiple="multiple">
+                        <option value="dairy" selected="selected" id="dairy">
+                        <!--selected="selected" auto-selects this choice, user can choose something else-->
+                        Dairy
+                        </option><option value="gluten" selected="selected" id="gluten">
+                        Gluten
+                        </option><option value="corn" selected="selected" id="corn">
+                        Corn
+                        </option><option value="Soy" id="soy">
+                        Soy
+                        </option><option value="Nuts" id="nuts">
+                        Nuts
+                    </option></select>
+                <!--upload box-->
+                <p>Upload your favorite ice cream recipe:</p>
+                    <input type="file" name="user_recipe">
+                    <input type="submit" value="Upload">
+                    <br>
+                    <br>
+                <!--submit button-->
+                <input type="submit" name="submit_ice_cream" value="Click here to submit!">
+                <br>
+            </fieldset>
+        </form>
+        <form>
+            <fieldset>
+                <legend>Random Form Options</legend>
+                <!--text box-->
+                    <label>Comments:
+                        <br>
+                        <textarea name="comments" cols="20" rows="4">Enter your comments here</textarea>
+                        <!--"Enter your comments" will appear in text box-->
+                    </label>
+                    <br>
+                <!--fancy submit button-->
+                    <p><strong>Sub</strong>scribe to our sandwich mailing list:</p> <!--dumb pun, sorry not sorry-->
+                    <input type="text" name="email">
+                    <input type="image" src="Images/sub.jpg" width="70" height="30">
+                    <br>
+                    <br>
+                    <br>
+                <!--required field and dates-->
+                    <label>Username (required):<input type="text" name="username" maxlength="20" required="required"></label>
+                    <br>
+                    <label>Password (required):<input type="password" name="password" maxlength="20" required="required"></label>
+                    <br>
+                    <label for="username">Date of last sandwich eaten:</label>
+                    <input type="date" name="last_sandwich">
+                    <input type="submit" value="Submit">
+                    <br>
+                <!--better email and url input checking-->
+                    <label>Enter your email:<input type="email" name="email"></label>
+                    <input type="submit" name="Submit">
+                    <br>
+                    <label>Enter a url:<input type="url" name="url"></label>
+                    <input type="submit" name="Submit">
+                    <br>
+                <!--search-->
+                    <label>Search:<input type="search" name="search" placeholder="Enter keyword"></label>
+                    <input type="submit" name="Submit">
+            </fieldset>
+        </form>
+        <a href="#top">Return to top</a>
+        <hr>
+
+        <h2 id="extra_markup">Extra Markup</h2>
+        <p><b>!DOCTYPES</b> (see line 1 in code) help tell browser which version of html to use for page. Should always be included.
+        </p><p>The <b>id</b> tag allows elements to be styled with CSS</p>
+        <p>The <b>class</b> tag is used to group elements together. Multiple elements of different types (ie, headers and paragraphs) can have same class.</p>
+        <p><b>Block level elements</b> will always be on a newline. Examples are:</p>
+        <ul>
+            <li>h1, h2, etc</li>
+            <li>p</li>
+            <li>ul</li>
+            <li>li</li>
+            <li>br /</li>
+            <li>hr /</li>
+        </ul>
+        <p><b>Inline elements</b> will always appear on same line as their neighboring elements. Examples are:</p>
+        <ul>
+            <li>a</li>
+            <ul><li>href</li></ul>
+            <li>b</li>
+            <ul><li>(bold)</li></ul>
+            <li>em</li>
+            <ul><li>(emphasis)</li></ul>
+            <li>img</li>
+        </ul>
+        <p>The <b>div tag</b> allows the elements inside the tag to be grouped together. The contents of the div element will be on a newline.
+            This is really useful when combined with an "id" tag and a "class" tag, for use with CSS.
+            Also helps your code stay neater (like, put each form above inside a "div" so it's easier to keep track of).</p>
+        <p>The <b>span tag</b> is used like "Div", but inline. Most useful for putting a "class" with it to control CSS.</p>
+        <p><b>iframes</b> are basically used to embed a seperate window into your page. Like a google maps screen. p. 189</p>
+        <p><b>meta tags</b> store information about the website. See the code in lines 2-10ish.</p>
+        <p>HTML escape characters:</p>
+        <ul>
+            <li>&amp;</li>
+            <ul><li>&amp;amp;</li></ul>
+            <li>&lt;</li>
+            <ul><li>&amp;lt;</li></ul>
+            <li>&gt;</li>
+            <ul><li>&amp;gt;</li></ul>
+            <li>&quot;</li>
+            <ul><li>&amp;quot;</li></ul>
+            <li>&cent;</li>
+            <ul><li>&amp;cent;</li></ul>
+            <li>&pound;</li>
+            <ul><li>&amp;pound;</li></ul>
+            <li>&yen;</li>
+            <ul><li>&amp;yen;</li></ul>
+            <li>&euro;</li>
+            <ul><li>&amp;euro;</li></ul>
+            <li>&copy;</li>
+            <ul><li>&amp;copy;</li></ul>
+            <li>&reg;</li>
+            <ul><li>&amp;reg;</li></ul>
+            <li>&trade;</li>
+            <ul><li>&amp;trade;</li></ul>
+            <li>&lsquo;</li>
+            <ul><li>&amp;lsquo;</li></ul>
+            <li>&rsquo;</li>
+            <ul><li>&amp;rsquo;</li></ul>
+            <li>&ldquo;</li>
+            <ul><li>&amp;ldquo;</li></ul>
+            <li>&rdquo;</li>
+            <ul><li>&amp;rdquo;</li></ul>
+            <li>&times;</li>
+            <ul><li>&amp;times;</li></ul>
+            <li>&divide;</li>
+            <ul><li>&amp;divide;</li></ul>
+        </ul>
+        <a href="#top">Return to top</a>
+        <hr>
+    </body>
+</html>
